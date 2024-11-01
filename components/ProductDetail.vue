@@ -5,9 +5,6 @@ defineProps(["product"])
 </script>
 
 <template>
-    
-    
-    
     <main>
         <UCard>
             <template #header>
@@ -33,14 +30,7 @@ defineProps(["product"])
     background-color: rgba(14, 177, 14, 0.797);
     color: white;
 }
-.description,.title{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.description{
-    width: 275px;
-}
+
 .img{
     padding: 5px;
     max-width: 125px;
@@ -48,7 +38,6 @@ defineProps(["product"])
     object-fit: contain;
     text-align:center;
     margin:auto;
-    display:flex
 }
 .footer{
     display: flex;
@@ -58,6 +47,8 @@ main{
     display: flex;
     justify-content: center;
     align-content: center;
+    align-items: center;
     width: 100%;
+    padding: 40px;
 }
 </style>

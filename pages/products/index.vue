@@ -2,6 +2,7 @@
 definePageMeta({
   layout: 'default'
 })
+
 const { data:products, pending, error, refresh } = await useFetch('https://fakestoreapi.com/products')
 </script>
 
@@ -22,5 +23,10 @@ const { data:products, pending, error, refresh } = await useFetch('https://fakes
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+}
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 </style>
