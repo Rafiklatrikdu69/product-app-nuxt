@@ -62,4 +62,9 @@ defineProps(["product"])
 .details-link:hover {
     background-color: rgba(31, 31, 31, 0.74); 
 }
+@media only screen and (max-width: 600px) {
+    .description{
+        width: 100%;
+    }
+}
 </style>
