@@ -19,7 +19,6 @@ defineProps(["product"])
             <p class="description">{{ product.description }}</p>
             <template #footer>
                <span class="footer">
-                <div>{{ product.price }} $</div>
                 <NuxtLink :to='`/products/${product.id}`' class="details-link">Détails</NuxtLink>
                </span>
             </template>

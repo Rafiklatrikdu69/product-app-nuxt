@@ -1,4 +1,9 @@
 <script setup>
+const sup = useSupabaseClient();
+
+definePageMeta({
+    layout: 'nav'
+})
 
 </script>
 

@@ -1,6 +1,12 @@
 <script setup>
 defineProps(["product"])
-
+const quantity = ref(1)
+const increment = ()=>{
+    quantity.value++;
+}
+const decrement  =()=>{
+    if(quantity.value > 0) quantity.value--;
+}
 
 </script>
 
@@ -15,9 +21,15 @@ defineProps(["product"])
             </template>
             <p class="description">{{ product.description }}</p>
             <template #footer>
-               <span class="footer">
-                <div>{{ product.price }} $</div>
-               </span>
+                <span class="footer">
+                    <div>{{ (product.price * quantity).toFixed(2) }} $</div>
+                    <div class="plusOrMoins">
+                        <UButton @click="increment">+</UButton>
+                        
+                        <UButton @click="decrement">-</UButton>
+                    </div>
+                    <div class="quantity">{{ quantity }}</div>
+                </span>
             </template>
         </UCard>
     </main>
@@ -50,5 +62,11 @@ main{
     align-items: center;
     width: 100%;
     padding: 40px;
+}
+.plusOrMoins{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 </style>

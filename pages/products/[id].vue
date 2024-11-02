@@ -1,4 +1,9 @@
 <script  setup>
+definePageMeta({
+  layout: 'nav',
+  middleware: ['auth']
+})
+
 const {id} = useRoute().params;
 const { data:product, pending, error, refresh } = await useFetch(`https://fakestoreapi.com/products/${id}`,{key:id});
 

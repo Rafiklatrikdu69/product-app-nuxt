@@ -1,9 +1,17 @@
 <script  setup>
+ import { supabase } from '../utils/supabase'
+
 definePageMeta({
-  layout: 'default'
+  layout: 'nav',
+  middleware: ['auth']
 })
 
-const { data:products, pending, error, refresh } = await useFetch('https://fakestoreapi.com/products')
+
+const { data: products, error } = await supabase
+  .from('products')
+  .select('*')
+          
+console.log(JSON.stringify(products))
 </script>
 
 <template>
